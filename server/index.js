@@ -858,12 +858,11 @@ app.put("/api/admin/gift-stock/:packId", adminAuth, (req, res) => {
 
 app.get("/api/admin/local-products", adminAuth, (_req, res) => {
   const s = getSettings();
-  const products = Array.isArray(s.localProducts) && s.localProducts.length
-    ? s.localProducts
-    : DEFAULT_LOCAL_PRODUCTS;
+  const hasSaved = Array.isArray(s.localProducts);
+  const products = hasSaved ? s.localProducts : DEFAULT_LOCAL_PRODUCTS;
   res.json({
     products,
-    usingDefaults: !(Array.isArray(s.localProducts) && s.localProducts.length),
+    usingDefaults: !hasSaved,
     stockCounts: stockSummary(),
   });
 });
@@ -1082,6 +1081,24 @@ setInterval(() => {
 try {
   runAutoBackup();
 } catch {}
+
+
+/* Drop legacy demo local products (Roblox GC + MLBB box) once — Admin could not remove them before */
+const DEMO_LOCAL_IDS = new Set(["roblox-gift-cards", "mlbb-box-event"]);
+function purgeDemoLocalProducts() {
+  try {
+    const s = getSettings();
+    if (!Array.isArray(s.localProducts) || !s.localProducts.length) return;
+    const next = s.localProducts.filter((g) => !DEMO_LOCAL_IDS.has(String(g?.id || "")));
+    if (next.length !== s.localProducts.length) {
+      updateSettings({ localProducts: next });
+      console.log("[localProducts] purged demo items:", s.localProducts.length - next.length);
+    }
+  } catch (e) {
+    console.warn("[localProducts] purge failed", e.message);
+  }
+}
+purgeDemoLocalProducts();
 
 app.listen(PORT, () => {
   console.log(`Ruby Topup on :${PORT}`);
