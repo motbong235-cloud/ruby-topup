@@ -2,8 +2,8 @@
 :root {
   --bg: #fef2f2;
   --surface: #ffffff;
-  --ink: #0c1b33;
-  --muted: #5c6e88;
+  --ink: #1c0a0a;
+  --muted: #9a6b6b;
   --line: #dbe6f3;
   --primary: #dc2626;
   --primary-2: #f87171;
@@ -19,13 +19,13 @@
 }
 
 html.dark {
-  --bg: #07111f;
-  --surface: #0e1b2e;
+  --bg: #0a0606;
+  --surface: #1a0f0f;
   --ink: #eef4ff;
-  --muted: #9aafc8;
-  --line: #1e3352;
-  --ice: #143056;
-  --navy: #06162e;
+  --muted: #c4a0a0;
+  --line: #3f1a1a;
+  --ice: #3f1515;
+  --navy: #1a0808;
   --on-navy: #fff5f5;
   --shadow: 0 8px 28px -12px rgba(0, 0, 0, 0.45);
 }
@@ -329,12 +329,12 @@ img {
 
 .banner-deep {
   background:
-    radial-gradient(60% 80% at 92% 18%, hsl(208 100% 68% / 0.55), transparent 60%),
-    radial-gradient(50% 70% at 8% 90%, hsl(198 90% 48% / 0.35), transparent 62%),
-    linear-gradient(115deg, #06162e 0%, #0c3f86 52%, #1480e0 100%);
+    radial-gradient(60% 80% at 92% 18%, hsl(0 100% 68% / 0.55), transparent 60%),
+    radial-gradient(50% 70% at 8% 90%, hsl(0 90% 48% / 0.35), transparent 62%),
+    linear-gradient(115deg, #1a0808 0%, #991b1b 52%, #dc2626 100%);
 }
 
-.banner-ice {
+.banner-ruby {
   background:
     radial-gradient(50% 80% at 90% 20%, #ffffffcc, transparent 55%),
     linear-gradient(120deg, #7f1d1d 0%, #dc2626 48%, #fecaca 100%);
@@ -342,8 +342,8 @@ img {
 
 .banner-night {
   background:
-    radial-gradient(40% 60% at 80% 30%, hsl(200 100% 60% / 0.4), transparent 70%),
-    linear-gradient(160deg, #04101f, #0a2a55 60%, #123f7a);
+    radial-gradient(40% 60% at 80% 30%, hsl(0 100% 60% / 0.4), transparent 70%),
+    linear-gradient(160deg, #04101f, #3f1212 60%, #7f1d1d);
 }
 
 .banner-copy {
@@ -2501,7 +2501,7 @@ body {
   font-weight: 700;
 }
 .success-sub {
-  color: var(--muted, #64748b);
+  color: var(--muted, #78716c);
   margin: 0 0 20px;
   font-size: 0.95rem;
 }
@@ -2521,7 +2521,7 @@ body {
   font-size: 0.92rem;
 }
 .success-table .row:last-child { border-bottom: 0; }
-.success-table .row span { color: var(--muted, #64748b); }
+.success-table .row span { color: var(--muted, #78716c); }
 .success-table .row strong { text-align: right; word-break: break-all; }
 .success-chat-box {
   background: #fef9c3;
@@ -3221,7 +3221,7 @@ html.dark .hot-foot {
   height: 22px;
   padding: 0 8px;
   border-radius: 4px;
-  background: #003d7a;
+  background: #7f1d1d;
   color: #fff;
   font-size: 11px;
   font-weight: 900;
@@ -3230,7 +3230,7 @@ html.dark .hot-foot {
   font-weight: 900;
   font-size: 15px;
   letter-spacing: 0.08em;
-  color: #003d7a;
+  color: #7f1d1d;
 }
 .pw-amount {
   text-align: center;
@@ -3241,7 +3241,7 @@ html.dark .hot-foot {
 .pw-hint {
   text-align: center;
   font-size: 13px;
-  color: #64748b;
+  color: #78716c;
   margin: 0 0 12px;
 }
 .pw-qr-wrap {
@@ -3267,7 +3267,7 @@ html.dark .hot-foot {
   margin-top: 12px;
   font-size: 13px;
   font-weight: 600;
-  color: #475569;
+  color: #57534e;
 }
 .pw-timer-dot {
   width: 8px;
@@ -3283,14 +3283,14 @@ html.dark .hot-foot {
 .pw-order {
   text-align: center;
   font-size: 12px;
-  color: #94a3b8;
+  color: #a8a29e;
   margin: 8px 0 0;
   font-family: ui-monospace, monospace;
 }
 .pw-aba-btn {
   width: 100%;
   margin-top: 16px;
-  background: linear-gradient(100deg, #0055a5, #003d7a) !important;
+  background: linear-gradient(100deg, #b91c1c, #7f1d1d) !important;
   color: #fff !important;
   border: none;
   border-radius: 999px;
@@ -3333,7 +3333,7 @@ html.dark .hot-foot {
 .pw-scanned-desc {
   margin: 8px 16px 0;
   font-size: 14px;
-  color: #64748b;
+  color: #78716c;
   line-height: 1.45;
 }
 .pw-waiting {
@@ -3344,15 +3344,15 @@ html.dark .hot-foot {
   padding: 8px 14px;
   border-radius: 999px;
   background: #eff6ff;
-  color: #1d4ed8;
+  color: #b91c1c;
   font-size: 13px;
   font-weight: 600;
 }
 .pw-spin {
   width: 14px;
   height: 14px;
-  border: 2px solid #93c5fd;
-  border-top-color: #1d4ed8;
+  border: 2px solid #fca5a5;
+  border-top-color: #b91c1c;
   border-radius: 50%;
   animation: pw-spin 0.7s linear infinite;
 }
@@ -3436,8 +3436,8 @@ html.dark .hot-foot {
    Ruby Topup v2 — modern 2026 refresh
    ========================================================= */
 :root {
-  --primary: #2563eb;
-  --primary-2: #60a5fa;
+  --primary: #dc2626;
+  --primary-2: #f87171;
   --radius: 1.15rem;
   --shadow: 0 4px 24px -6px rgba(15, 23, 42, 0.12);
   --shadow-lg: 0 20px 50px -18px rgba(37, 99, 235, 0.35);
@@ -3452,7 +3452,7 @@ html.dark {
 body {
   background:
     radial-gradient(1200px 600px at 10% -10%, color-mix(in srgb, var(--primary) 12%, transparent), transparent 55%),
-    radial-gradient(900px 500px at 100% 0%, color-mix(in srgb, #22d3ee 8%, transparent), transparent 50%),
+    radial-gradient(900px 500px at 100% 0%, color-mix(in srgb, #fca5a5 8%, transparent), transparent 50%),
     var(--bg);
 }
 
@@ -3516,7 +3516,7 @@ body {
 
 .banner-slide {
   background:
-    linear-gradient(135deg, #0b1f3a 0%, #1d4ed8 48%, #38bdf8 120%) !important;
+    linear-gradient(135deg, #0b1f3a 0%, #b91c1c 48%, #f87171 120%) !important;
 }
 
 .banner-title {
@@ -3560,7 +3560,7 @@ body {
   border-radius: 999px !important;
   font-weight: 800 !important;
   letter-spacing: -0.01em;
-  background: linear-gradient(105deg, #60a5fa, #2563eb 55%, #1d4ed8) !important;
+  background: linear-gradient(105deg, #f87171, #dc2626 55%, #b91c1c) !important;
   box-shadow:
     0 12px 28px -10px rgba(37, 99, 235, 0.55),
     inset 0 1px 0 rgba(255, 255, 255, 0.25) !important;
@@ -3646,7 +3646,7 @@ html.dark .game-card {
 }
 
 .game-card:hover:not(.disabled) .game-cta.on {
-  background: linear-gradient(105deg, #60a5fa, #2563eb) !important;
+  background: linear-gradient(105deg, #f87171, #dc2626) !important;
   color: #fff !important;
 }
 
@@ -3760,7 +3760,7 @@ input:focus {
   gap: 10px;
   padding: 12px 12px 12px 14px;
   border-radius: 16px;
-  background: linear-gradient(135deg, #0b3d91 0%, #dc2626 55%, #f87171 100%);
+  background: linear-gradient(135deg, #991b1b 0%, #dc2626 55%, #f87171 100%);
   color: #fff;
   box-shadow: 0 12px 32px -8px rgba(13, 71, 161, 0.55);
   animation: installBannerIn 0.35s cubic-bezier(0.22, 1, 0.36, 1);
@@ -3805,7 +3805,7 @@ input:focus {
   font-weight: 800 !important;
   border-radius: 999px !important;
   background: #fff !important;
-  color: #0b3d91 !important;
+  color: #991b1b !important;
   border: none !important;
   white-space: nowrap;
 }
@@ -3825,7 +3825,7 @@ input:focus {
   margin: 12px 0 0;
   font-size: 13.5px;
   line-height: 1.5;
-  color: var(--muted, #64748b);
+  color: var(--muted, #78716c);
 }
 @media (min-width: 768px) {
   .install-banner {
@@ -3963,7 +3963,7 @@ input:focus {
 /* .btn.bg-brand has !important gradient — needs a more specific selector to turn the pill white */
 .install-banner .install-banner-cta.btn.bg-brand {
   background: #fff !important;
-  color: #0b3d91 !important;
+  color: #991b1b !important;
   padding: 7px 14px !important;
   font-size: 12.5px !important;
   box-shadow: 0 4px 12px -4px rgba(0, 0, 0, 0.35) !important;
@@ -4113,7 +4113,7 @@ input:focus {
   letter-spacing: 0.06em;
 }
 .pw-aba-btn {
-  background: linear-gradient(135deg, #0A4A7A 0%, #dc2626 55%, #f87171 100%) !important;
+  background: linear-gradient(135deg, #7f1d1d 0%, #dc2626 55%, #f87171 100%) !important;
   border: none !important;
   font-weight: 800 !important;
 }
@@ -4200,7 +4200,7 @@ input:focus {
   max-width: 130px;
   object-fit: contain;
   border-radius: 10px;
-  background: #063A66;
+  background: #450a0a;
   box-shadow: 0 4px 14px -4px rgba(6, 58, 102, 0.55);
 }
 .pay-khqr-mark {
@@ -4308,7 +4308,7 @@ input:focus {
   align-items: center;
   justify-content: space-between;
   padding: 12px 14px;
-  background: linear-gradient(90deg, #0a3d7a, #dc2626);
+  background: linear-gradient(90deg, #7f1d1d, #dc2626);
   color: #fff;
 }
 .livechat-head strong { font-size: 15px; display: block; }
@@ -4353,7 +4353,7 @@ input:focus {
 }
 .livechat-bubble.me {
   align-self: flex-end;
-  background: linear-gradient(135deg, #dc2626, #3b82f6);
+  background: linear-gradient(135deg, #dc2626, #ef4444);
   color: #fff;
   border-bottom-right-radius: 4px;
 }
@@ -4439,7 +4439,7 @@ html:not(.dark) .msgr-panel {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #60a5fa, #1d4ed8);
+  background: linear-gradient(135deg, #f87171, #b91c1c);
   display: grid;
   place-items: center;
   font-weight: 900;
@@ -4676,8 +4676,8 @@ html.dark .msgr-order-card {
   letter-spacing: 0.04em;
   padding: 4px 8px;
   border-radius: 999px;
-  background: #dbeafe;
-  color: #1d4ed8;
+  background: #fee2e2;
+  color: #b91c1c;
 }
 .msgr-order-rows {
   padding: 4px 14px 14px;
@@ -4691,7 +4691,7 @@ html.dark .msgr-order-card {
   font-size: 12.5px;
 }
 .msgr-order-rows span {
-  color: #64748b;
+  color: #78716c;
   font-weight: 600;
 }
 .msgr-order-rows b {
@@ -4709,7 +4709,7 @@ html.dark .msgr-order-card {
   box-shadow: 0 0 0 3px rgba(74, 222, 128, 0.25);
 }
 .msgr-head {
-  background: linear-gradient(135deg, #0f766e, #dc2626 55%, #2563eb) !important;
+  background: linear-gradient(135deg, #0f766e, #dc2626 55%, #dc2626) !important;
 }
 
 /* ===== Site-wide UI polish (2026-10) ===== */

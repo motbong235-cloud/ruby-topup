@@ -6,7 +6,7 @@ const ADMIN_PATH = (typeof window !== "undefined" && window.__ADMIN_PATH__) || "
 
 const DAY_KM = ["អា", "ច", "អ", "ព", "ព្រ", "សុ", "ស"];
 
-function Stat({ icon, label, value, sub, tone = "blue" }) {
+function Stat({ icon, label, value, sub, tone = "red" }) {
   return (
     <div className="ad-stat">
       <span className={`ad-stat-ico ${tone}`}>
@@ -53,7 +53,7 @@ export default function Dashboard() {
       <PageHead km="ផ្ទាំងគ្រប់គ្រង" en="Overview of orders, revenue and system status" />
 
       <div className="ad-stats">
-        <Stat icon="money" tone="blue" label="ចំណូលសរុប" value={usd(s.revenue)} sub="ការបញ្ជាទិញជោគជ័យ" />
+        <Stat icon="money" tone="red" label="ចំណូលសរុប" value={usd(s.revenue)} sub="ការបញ្ជាទិញជោគជ័យ" />
         <Stat icon="trend" tone="green" label="ប្រាក់ចំណេញ" value={usd(s.profit)} sub="ចំណូល − តម្លៃដើម" />
         <Stat icon="box" tone="violet" label="ការបញ្ជាទិញ" value={s.totalOrders} sub={`ថ្ងៃនេះ ${s.todayOrders}`} />
         <Stat icon="clock" tone="amber" label="រង់ចាំបង់ប្រាក់" value={s.pending} sub="មិនទាន់បង់" />

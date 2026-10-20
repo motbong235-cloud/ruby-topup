@@ -9,7 +9,7 @@
   --ad-warn-bg: #fff3cd;
   --ad-warn: #8a6d00;
   --ad-bad-bg: #fde8ec;
-  --ad-info-bg: #e3efff;
+  --ad-info-bg: #fef2f2;
   min-height: 100dvh;
   display: grid;
   grid-template-columns: 1fr;
@@ -21,7 +21,7 @@ html.dark .ad {
   --ad-warn-bg: #3d3200;
   --ad-warn: #ffd666;
   --ad-bad-bg: #3d1520;
-  --ad-info-bg: #12315c;
+  --ad-info-bg: #3f1515;
 }
 
 .ad *,
@@ -89,7 +89,7 @@ html.dark .ad {
   letter-spacing: -0.02em;
 }
 .ad-brand b {
-  color: #7ec3ff;
+  color: #fca5a5;
 }
 .ad-logo {
   display: grid;
@@ -100,7 +100,7 @@ html.dark .ad {
   font-weight: 800;
   font-size: 20px;
   color: #fff;
-  background: linear-gradient(140deg, #5eb0ff, #dc2626 60%, #0c4fb8);
+  background: linear-gradient(140deg, #f87171, #dc2626 60%, #991b1b);
   box-shadow: 0 10px 24px -10px rgba(29, 106, 223, 0.7);
 }
 .ad-logo.sm {
@@ -152,7 +152,7 @@ html.dark .ad {
     flex-direction: column;
     gap: 22px;
     padding: 20px 14px;
-    background: linear-gradient(190deg, #06162e, #0a2a55 70%, #0d3466);
+    background: linear-gradient(190deg, #1a0808, #3f1212 70%, #4c1515);
     color: var(--on-navy);
   }
   .ad-side .ad-brand {
@@ -362,7 +362,7 @@ html.dark .ad {
 }
 .ad-btn.primary {
   color: #fff;
-  background: linear-gradient(100deg, #5eb0ff 0%, #dc2626 55%, #0c57c9 100%);
+  background: linear-gradient(100deg, #f87171 0%, #dc2626 55%, #b91c1c 100%);
   box-shadow: 0 8px 20px -10px rgba(29, 106, 223, 0.8);
 }
 .ad-btn.soft {
@@ -413,7 +413,7 @@ html.dark .ad {
   transition: transform 0.18s;
 }
 .ad-switch.on {
-  background: linear-gradient(100deg, #5eb0ff, #dc2626);
+  background: linear-gradient(100deg, #f87171, #dc2626);
 }
 .ad-switch.on span {
   transform: translateX(20px);
@@ -539,7 +539,7 @@ html.dark .ad {
 .ad-chip.active {
   color: #fff;
   border-color: transparent;
-  background: linear-gradient(100deg, #5eb0ff, #dc2626);
+  background: linear-gradient(100deg, #f87171, #dc2626);
 }
 .ad-chip.active em {
   background: rgba(255, 255, 255, 0.25);
@@ -600,7 +600,7 @@ html.dark .ad {
   place-items: center;
   border-radius: 12px;
 }
-.ad-stat-ico.blue {
+.ad-stat-ico.red {
   background: var(--ad-info-bg);
   color: var(--primary);
 }
@@ -609,16 +609,16 @@ html.dark .ad {
   color: var(--ok);
 }
 .ad-stat-ico.violet {
-  background: #efe8ff;
-  color: #6d4ae0;
+  background: #fef2f2;
+  color: #dc2626;
 }
 .ad-stat-ico.amber {
   background: var(--ad-warn-bg);
   color: var(--ad-warn);
 }
 html.dark .ad-stat-ico.violet {
-  background: #2a1f56;
-  color: #b9a3ff;
+  background: #3f1212;
+  color: #fca5a5;
 }
 .ad-stat-label {
   font-size: 12px;
@@ -680,7 +680,7 @@ html.dark .ad-stat-ico.violet {
   display: block;
   width: 100%;
   border-radius: 10px 10px 0 0;
-  background: linear-gradient(180deg, #5eb0ff, #dc2626);
+  background: linear-gradient(180deg, #f87171, #dc2626);
 }
 .ad-bar-lbl {
   font-size: 12px;
@@ -1256,8 +1256,8 @@ html.dark .ad-stat-ico.violet {
   place-items: center;
   padding: 24px;
   background:
-    radial-gradient(60% 50% at 80% 10%, hsl(208 100% 55% / 0.35), transparent 60%),
-    linear-gradient(160deg, #06162e, #0a2a55 55%, #123f7a);
+    radial-gradient(60% 50% at 80% 10%, hsl(0 100% 55% / 0.35), transparent 60%),
+    linear-gradient(160deg, #1a0808, #3f1212 55%, #7f1d1d);
 }
 .ad-login-box {
   --ad-r: 16px;
@@ -1327,7 +1327,7 @@ html.dark .ad-stat-ico.violet {
   font-size: 15px;
   font-weight: 800;
   font-family: inherit;
-  background: linear-gradient(100deg, #5eb0ff 0%, #dc2626 55%, #0c57c9 100%);
+  background: linear-gradient(100deg, #f87171 0%, #dc2626 55%, #b91c1c 100%);
   cursor: pointer;
 }
 .ad-login-box button:disabled {
@@ -1759,7 +1759,7 @@ html.dark .ad-stat-ico.violet {
   width: 56px !important;
   height: 56px !important;
   border-radius: 16px !important;
-  background: linear-gradient(135deg, #f87171, #0a4cb5) !important;
+  background: linear-gradient(135deg, #f87171, #991b1b) !important;
   color: #fff !important;
   font-weight: 900 !important;
   display: grid !important;
@@ -1789,13 +1789,13 @@ html.dark .ad-stat-ico.violet {
 }
 .ad-login-box button {
   border-radius: 12px !important;
-  background: linear-gradient(135deg, #f87171 0%, #dc2626 55%, #0a4cb5 100%) !important;
+  background: linear-gradient(135deg, #f87171 0%, #dc2626 55%, #991b1b 100%) !important;
   font-weight: 800 !important;
   box-shadow: 0 10px 22px -8px rgba(29, 106, 223, 0.55);
 }
 
 .ad-mbar {
-  background: linear-gradient(90deg, #0a3d7a 0%, #0b4a9e 50%, #dc2626 100%) !important;
+  background: linear-gradient(90deg, #7f1d1d 0%, #991b1b 50%, #dc2626 100%) !important;
   box-shadow: 0 4px 16px -6px rgba(10, 61, 122, 0.45);
 }
 
@@ -1835,7 +1835,7 @@ html.dark .ad-stat-ico.violet {
   transition: transform 0.15s ease, filter 0.15s ease, box-shadow 0.15s ease;
 }
 .ad-btn.primary {
-  background: linear-gradient(135deg, #f87171 0%, #dc2626 60%, #0a4cb5 100%) !important;
+  background: linear-gradient(135deg, #f87171 0%, #dc2626 60%, #991b1b 100%) !important;
   border: none !important;
   color: #fff !important;
   box-shadow: 0 8px 18px -8px rgba(29, 106, 223, 0.5);
@@ -2000,7 +2000,7 @@ table.ad-table {
 }
 .ad-chat-bubble.agent {
   align-self: flex-end;
-  background: linear-gradient(135deg, #dc2626, #3b82f6);
+  background: linear-gradient(135deg, #dc2626, #ef4444);
   color: #fff;
 }
 .ad-chat-bubble time {
