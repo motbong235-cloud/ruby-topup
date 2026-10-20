@@ -49,7 +49,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, "..");
 const DIST = path.join(ROOT, "dist");
 const PORT = Number(process.env.PORT) || 3000;
-const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || "ruby-admin-2026";
+const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || "R+CvEURdda/g4u7SZ0xccqaLBHf4lVjb/aa+RU7S7/A=";
 
 function isWeakAdminPassword(pw) {
   const p = String(pw || "");
