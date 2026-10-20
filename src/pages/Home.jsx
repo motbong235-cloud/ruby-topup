@@ -6,35 +6,49 @@ import { t } from "../lib/i18n";
 import { GameTile, Icon } from "../components/Icons";
 
 function GameCard({ game, lang, famous }) {
+  const packs = Array.isArray(game.packs) ? game.packs : [];
+  const minPrice = packs.length ? Math.min(...packs.map((p) => Number(p.price) || Infinity)) : null;
+  const priceLabel =
+    minPrice != null && Number.isFinite(minPrice)
+      ? lang === "km"
+        ? `ចាប់ពី ${money(minPrice)}`
+        : `From ${money(minPrice)}`
+      : null;
+
   const badge = !game.open ? (
-    <span className="game-badge off">{t(lang, "off")}</span>
-  ) : famous ? (
-    <span className="game-badge hot">{t(lang, "hot")}</span>
+    <span className="gc-badge off">{t(lang, "off")}</span>
+  ) : famous || game.hot ? (
+    <span className="gc-badge hot">{t(lang, "hot")}</span>
   ) : null;
 
-  const cta = game.open ? (
-    <span className="game-cta on">{t(lang, "topup")}</span>
-  ) : (
-    <span className="game-cta off">{t(lang, "off")}</span>
+  const body = (
+    <>
+      <div className="gc-media">
+        {badge}
+        <GameTile game={game} />
+        <div className="gc-media-shine" aria-hidden />
+      </div>
+      <div className="gc-body">
+        <div className="gc-name">{lang === "km" && game.nameKm ? game.nameKm : game.name}</div>
+        {priceLabel ? <div className="gc-price">{priceLabel}</div> : <div className="gc-price muted">—</div>}
+        <span className={`gc-cta${game.open ? " on" : " off"}`}>
+          {game.open ? t(lang, "topup") : t(lang, "off")}
+        </span>
+      </div>
+    </>
   );
 
   if (!game.open) {
     return (
-      <div className="game-card disabled" title={t(lang, "unavailable")}>
-        {badge}
-        <GameTile game={game} />
-        <div className="game-name">{game.name}</div>
-        {cta}
+      <div className="gc-card disabled" title={t(lang, "unavailable")}>
+        {body}
       </div>
     );
   }
 
   return (
-    <Link className="game-card card-hover" to={`/game/${game.id}`}>
-      {badge}
-      <GameTile game={game} />
-      <div className="game-name">{game.name}</div>
-      {cta}
+    <Link className="gc-card" to={`/game/${game.id}`}>
+      {body}
     </Link>
   );
 }
