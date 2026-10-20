@@ -71,7 +71,7 @@ export default function Home({ lang, settings }) {
   }, [count]);
 
   const slides = [
-    { tone: "banner-deep", kicker: "kicker1", title: "title1", sub: "sub1", to: firstTo, badge: "PP", ghost: true },
+    { tone: "banner-deep", kicker: "kicker1", title: "title1", sub: "sub1", to: firstTo, badge: "RT", ghost: true },
     { tone: "banner-ice", kicker: "kicker2", title: "title2", sub: "sub2", to: firstTo, badge: games[0]?.mark || "TOP", ghost: false },
     { tone: "banner-night", kicker: "kicker3", title: "title3", sub: "sub3", to: "/support", badge: "QR", ghost: false },
   ];

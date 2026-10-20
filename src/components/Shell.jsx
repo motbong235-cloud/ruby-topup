@@ -17,7 +17,7 @@ function LogoMark({ url, style }) {
   }
   return (
     <div className="logo-mark" style={style}>
-      PP
+      RT
     </div>
   );
 }

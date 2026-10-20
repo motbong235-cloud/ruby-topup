@@ -4846,3 +4846,189 @@ main {
   .game-grid { gap: 10px; }
   .banner, .hero { border-radius: 1rem; }
 }
+
+/* ========== RUBY v2 — Game products + Install banner ========== */
+
+.game-grid {
+  gap: 12px;
+}
+
+.game-card {
+  background: linear-gradient(180deg, #ffffff 0%, #fff8f8 100%);
+  border: 1px solid color-mix(in srgb, var(--primary) 12%, var(--line));
+  border-radius: 18px;
+  padding: 12px 10px 12px;
+  box-shadow:
+    0 4px 14px -8px rgba(127, 29, 29, 0.18),
+    0 1px 0 rgba(255, 255, 255, 0.8) inset;
+}
+
+.game-card:hover:not(.disabled) {
+  transform: translateY(-6px) scale(1.03);
+  border-color: color-mix(in srgb, var(--primary) 55%, transparent);
+  box-shadow:
+    0 20px 36px -14px rgba(220, 38, 38, 0.35),
+    0 0 0 1px color-mix(in srgb, var(--primary) 30%, transparent);
+}
+
+.game-card:hover:not(.disabled) .game-cta.on {
+  background: linear-gradient(100deg, #ef4444, #b91c1c) !important;
+  box-shadow: 0 10px 20px -8px rgba(185, 28, 28, 0.55) !important;
+}
+
+.game-tile {
+  border-radius: 14px;
+  box-shadow:
+    0 8px 18px -10px rgba(0, 0, 0, 0.35),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.12);
+  background:
+    radial-gradient(120% 90% at 100% -10%, hsl(0 90% 72% / 0.55), transparent 55%),
+    radial-gradient(90% 80% at -10% 110%, hsl(350 70% 35% / 0.5), transparent 55%),
+    linear-gradient(155deg, hsl(var(--h, 0) 72% 42%), hsl(var(--h, 0) 65% 22%));
+}
+
+.game-tile img,
+.game-tile .event-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.game-name {
+  margin-top: 11px;
+  font-size: 12.5px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+.game-cta {
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 32px;
+  border-radius: 999px;
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  border: 1px solid color-mix(in srgb, var(--primary) 22%, var(--line));
+  background: color-mix(in srgb, var(--primary) 8%, #fff);
+  color: var(--primary);
+  transition: transform 0.2s, background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+
+.game-cta.on {
+  background: linear-gradient(100deg, #f87171, #dc2626);
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 6px 14px -6px rgba(220, 38, 38, 0.45);
+}
+
+.game-badge.hot {
+  background: linear-gradient(100deg, #fb7185, #dc2626);
+  box-shadow: 0 4px 10px -4px rgba(220, 38, 38, 0.55);
+}
+
+/* Spotlight / special event cards */
+.event-card,
+.hot-card {
+  border-radius: 18px !important;
+  background: linear-gradient(180deg, #fff, #fff5f5) !important;
+  border: 1px solid color-mix(in srgb, var(--primary) 14%, var(--line)) !important;
+  box-shadow: 0 6px 18px -10px rgba(127, 29, 29, 0.2) !important;
+}
+
+.event-card:hover,
+.hot-card:hover {
+  border-color: var(--primary) !important;
+  box-shadow: 0 18px 34px -12px rgba(220, 38, 38, 0.35) !important;
+}
+
+.hot-art,
+.event-art {
+  border-radius: 16px 16px 0 0;
+  overflow: hidden;
+}
+
+.hot-badge {
+  background: linear-gradient(100deg, #fb7185, #b91c1c) !important;
+  color: #fff !important;
+}
+
+.hot-price {
+  color: var(--primary) !important;
+  font-weight: 800;
+}
+
+.event-card:hover {
+  box-shadow: 0 18px 36px -12px rgba(220, 38, 38, 0.4) !important;
+}
+
+.event-tag,
+.event-meta {
+  background: rgba(69, 10, 10, 0.55) !important;
+}
+
+/* —— Install app banner (red glass) —— */
+.install-banner {
+  background:
+    radial-gradient(120% 160% at 0% 0%, rgba(248, 113, 113, 0.45), transparent 55%),
+    radial-gradient(100% 120% at 100% 100%, rgba(127, 29, 29, 0.55), transparent 50%),
+    linear-gradient(105deg, #9f1239 0%, #dc2626 48%, #7f1d1d 100%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+  box-shadow:
+    0 14px 32px -12px rgba(127, 29, 29, 0.55),
+    inset 0 1px 0 rgba(255, 255, 255, 0.22) !important;
+  color: #fff !important;
+}
+
+.install-banner-logo {
+  background: rgba(255, 255, 255, 0.18) !important;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  box-shadow: 0 4px 12px -4px rgba(0, 0, 0, 0.3);
+}
+
+.install-banner-text strong {
+  color: #fff !important;
+}
+
+.install-banner-text span {
+  color: rgba(255, 255, 255, 0.88) !important;
+}
+
+.install-banner .install-banner-cta.btn.bg-brand {
+  background: #fff !important;
+  color: #9f1239 !important;
+  border-radius: 999px !important;
+  font-weight: 800 !important;
+  box-shadow: 0 6px 16px -6px rgba(0, 0, 0, 0.35) !important;
+}
+
+.install-banner-x {
+  background: rgba(255, 255, 255, 0.18) !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  color: #fff !important;
+}
+
+.install-ok {
+  background: linear-gradient(100deg, #f87171, #dc2626) !important;
+  color: #fff !important;
+}
+
+/* Float chat — red ring */
+.float-chat {
+  background: linear-gradient(135deg, #ef4444, #b91c1c) !important;
+  box-shadow:
+    0 10px 24px -8px rgba(185, 28, 28, 0.7),
+    0 0 0 3px rgba(255, 255, 255, 0.9),
+    0 0 0 1px rgba(185, 28, 28, 0.25) !important;
+}
+
+/* Fix leftover blue shadows on cards */
+.game-card:hover:not(.disabled) {
+  box-shadow:
+    0 22px 40px -14px rgba(220, 38, 38, 0.38),
+    0 0 0 1px color-mix(in srgb, var(--primary) 28%, transparent) !important;
+}
