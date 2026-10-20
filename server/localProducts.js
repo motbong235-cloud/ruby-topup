@@ -9,61 +9,7 @@
  */
 import { getSettings, stockCount } from "./store.js";
 
-export const DEFAULT_LOCAL_PRODUCTS = [
-  {
-    id: "roblox-gift-cards",
-    name: "Roblox Gift Cards",
-    nameKm: "Roblox Gift Cards",
-    region: "Cambodia / Global",
-    blurbKm: "កាតអំណោយ Roblox — បង់រួចទទួលកូដស្វ័យប្រវត្តិ",
-    blurbEn: "Roblox gift cards — instant code after payment",
-    famous: true,
-    hot: true,
-    open: true,
-    hue: 210,
-    mark: "RBX",
-    image: "/games/roblox.svg",
-    deliveryType: "stock",
-    requireUsername: false,
-    hasZone: false,
-    servers: [],
-    numericId: false,
-    idHintKm: "មិនចាំបាច់ username",
-    idHintEn: "No username required",
-    packs: [
-      { id: "rbx-5", name: "Roblox $5", nameKm: "Roblox $5", price: 5.5, cost: 5, category: "Gift Card", bonus: "" },
-      { id: "rbx-10", name: "Roblox $10", nameKm: "Roblox $10", price: 10.5, cost: 10, category: "Gift Card", bonus: "" },
-      { id: "rbx-25", name: "Roblox $25", nameKm: "Roblox $25", price: 25.5, cost: 25, category: "Gift Card", bonus: "" },
-    ],
-  },
-  {
-    id: "mlbb-box-event",
-    name: "Box MLBB Event Ticket",
-    nameKm: "Box MLBB — សំបុត្រព្រឹត្តិការណ៍",
-    region: "Cambodia / SEA",
-    blurbKm: "កក់សំបុត្រ / Box ព្រឹត្តិការណ៍ Mobile Legends (Event · Carnival · Match). បង់រួច Admin ទាក់ទងតាម Live Chat ដើម្បីបញ្ជាក់ការកក់។",
-    blurbEn: "Book MLBB event / carnival / match tickets (Box). After payment, admin confirms via Live Chat.",
-    famous: true,
-    hot: true,
-    open: true,
-    hue: 45,
-    mark: "ML",
-    image: "/games/mlbb.svg",
-    deliveryType: "live_chat",
-    requireUsername: true,
-    hasZone: false,
-    servers: [],
-    numericId: false,
-    idHintKm: "បញ្ចូលឈ្មោះ + លេខទូរស័ព្ទ (ឬ Telegram) សម្រាប់ទំនាក់ទំនងកក់សំបុត្រ",
-    idHintEn: "Enter name + phone (or Telegram) for ticket booking contact",
-    packs: [
-      { id: "mlbb-box-std", name: "Standard Box / Ticket", nameKm: "សំបុត្រធម្មតា (Standard)", price: 5, cost: 4, category: "Event Ticket", bonus: "1 seat" },
-      { id: "mlbb-box-vip", name: "VIP Box / Ticket", nameKm: "សំបុត្រ VIP", price: 12, cost: 10, category: "Event Ticket", bonus: "VIP seat" },
-      { id: "mlbb-box-premium", name: "Premium Box", nameKm: "Premium Box", price: 25, cost: 20, category: "Event Ticket", bonus: "Premium + merch" },
-      { id: "mlbb-box-group", name: "Group Box (4 pax)", nameKm: "Group Box (៤ នាក់)", price: 40, cost: 32, category: "Event Ticket", bonus: "4 seats" },
-    ],
-  },
-];
+export const DEFAULT_LOCAL_PRODUCTS = [];  // empty — admin adds via panel; no hard-coded Roblox/MLBB box
 
 function normDelivery(dt) {
   if (dt === "live_chat") return "live_chat";
@@ -81,8 +27,10 @@ function forcedUsernameIds() {
 
 export function localCatalog() {
   const s = getSettings();
+  // If settings.localProducts was ever saved (array), respect it even when empty
+  // so Admin "delete all" actually hides products. Only use DEFAULT when unset.
   const overrides = Array.isArray(s.localProducts) ? s.localProducts : null;
-  const list = overrides && overrides.length ? overrides : DEFAULT_LOCAL_PRODUCTS;
+  const list = overrides !== null ? overrides : DEFAULT_LOCAL_PRODUCTS;
   const forced = forcedUsernameIds();
   return list
     .filter((g) => g && g.open !== false)
