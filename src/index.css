@@ -4,16 +4,16 @@
   --surface: #ffffff;
   --ink: #1c0a0a;
   --muted: #9a6b6b;
-  --line: #dbe6f3;
+  --line: #fecaca;
   --primary: #dc2626;
   --primary-2: #f87171;
   --navy: #450a0a;
   --ice: #fef2f2;
-  --on-primary: #f7fbff;
+  --on-primary: #fff5f5;
   --on-navy: #fff5f5;
   --danger: #d3455b;
   --ok: #0f8f6a;
-  --shadow: 0 8px 28px -12px rgba(8, 32, 68, 0.25);
+  --shadow: 0 8px 28px -12px rgba(69, 10, 10, 0.25);
   --radius: 1rem;
   --font: "Kantumruy Pro", "Plus Jakarta Sans", system-ui, sans-serif;
 }
@@ -21,7 +21,7 @@
 html.dark {
   --bg: #0a0606;
   --surface: #1a0f0f;
-  --ink: #eef4ff;
+  --ink: #fff5f5;
   --muted: #c4a0a0;
   --line: #3f1a1a;
   --ice: #3f1515;
