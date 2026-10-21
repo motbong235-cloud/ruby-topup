@@ -2018,3 +2018,309 @@ table.ad-table {
   flex: 1;
   padding: 10px 12px;
 }
+
+
+/* ========== Ruby Admin UI/UX v2 ========== */
+.ad-login {
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  padding: 24px 16px;
+  background:
+    radial-gradient(900px 480px at 10% -10%, rgba(248, 113, 113, 0.35), transparent 55%),
+    radial-gradient(700px 420px at 100% 0%, rgba(127, 29, 29, 0.4), transparent 50%),
+    linear-gradient(165deg, #1a0808 0%, #0a0606 55%, #2a0c0c 100%);
+}
+.ad-login-box {
+  width: min(400px, 100%);
+  padding: 28px 24px 24px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.97);
+  border: 1px solid rgba(220, 38, 38, 0.18);
+  box-shadow:
+    0 24px 48px -20px rgba(0, 0, 0, 0.45),
+    0 0 0 1px rgba(255, 255, 255, 0.06) inset;
+}
+.ad-login-box .ad-logo {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  display: grid;
+  place-items: center;
+  margin: 0 auto 14px;
+  font-weight: 900;
+  font-size: 18px;
+  color: #fff;
+  background: linear-gradient(135deg, #f87171, #b91c1c);
+  box-shadow: 0 12px 24px -10px rgba(185, 28, 28, 0.65);
+}
+.ad-login-box h1 {
+  text-align: center;
+  font-size: 1.45rem;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  color: #1c0a0a;
+}
+.ad-login-box h1 span {
+  background: linear-gradient(100deg, #ef4444, #b91c1c);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.ad-login-box > p {
+  text-align: center;
+  color: #9a6b6b;
+  font-size: 13px;
+  margin: 6px 0 18px;
+}
+.ad-login-box label {
+  display: grid;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #5c3a3a;
+  margin-bottom: 12px;
+}
+.ad-login-box input {
+  height: 46px;
+  border-radius: 12px;
+  border: 1px solid #fecaca;
+  padding: 0 14px;
+  font-size: 15px;
+  background: #fffafa;
+  outline: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.ad-login-box input:focus {
+  border-color: #f87171;
+  box-shadow: 0 0 0 3px rgba(248, 113, 113, 0.25);
+}
+.ad-login-box button[type="submit"] {
+  width: 100%;
+  height: 46px;
+  margin-top: 6px;
+  border: 0;
+  border-radius: 12px;
+  font-weight: 800;
+  font-size: 15px;
+  color: #fff;
+  cursor: pointer;
+  background: linear-gradient(100deg, #f87171, #dc2626 55%, #b91c1c);
+  box-shadow: 0 10px 22px -10px rgba(185, 28, 28, 0.7);
+}
+.ad-login-box button[type="submit"]:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+.ad-login-err {
+  background: #fef2f2;
+  color: #b91c1c;
+  border: 1px solid #fecaca;
+  border-radius: 10px;
+  padding: 10px 12px;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+/* Desktop sidebar — pure red, no blue hover leftovers */
+@media (min-width: 900px) {
+  .ad-side {
+    background: linear-gradient(190deg, #1a0808 0%, #3f1212 55%, #5c1515 100%) !important;
+    border-right: 1px solid rgba(255, 255, 255, 0.06);
+  }
+  .ad-link {
+    color: rgba(255, 245, 245, 0.78) !important;
+    border-radius: 14px !important;
+  }
+  .ad-link small {
+    color: rgba(255, 245, 245, 0.42) !important;
+  }
+  .ad-link:hover {
+    background: rgba(248, 113, 113, 0.14) !important;
+    color: #fff !important;
+  }
+  .ad-link.active {
+    background: linear-gradient(100deg, rgba(248, 113, 113, 0.35), rgba(185, 28, 28, 0.4)) !important;
+    color: #fff !important;
+    box-shadow: inset 0 0 0 1px rgba(252, 165, 165, 0.35) !important;
+  }
+  .ad-logo.sm {
+    background: linear-gradient(135deg, #f87171, #b91c1c) !important;
+    color: #fff !important;
+    box-shadow: 0 6px 14px -6px rgba(185, 28, 28, 0.7);
+  }
+}
+
+/* Mobile top bar + bottom tabs */
+.ad-mbar {
+  background: linear-gradient(100deg, #9f1239, #dc2626 50%, #7f1d1d) !important;
+  color: #fff !important;
+  border-bottom: 0 !important;
+  box-shadow: 0 8px 20px -12px rgba(127, 29, 29, 0.55);
+}
+.ad-mbar .ad-brand,
+.ad-mbar a,
+.ad-mbar button {
+  color: #fff !important;
+}
+.ad-tabs {
+  background: #fff !important;
+  border-top: 1px solid #fecaca !important;
+  box-shadow: 0 -8px 24px -16px rgba(127, 29, 29, 0.25);
+}
+.ad-tabs a.active {
+  color: #dc2626 !important;
+  background: #fef2f2 !important;
+}
+
+/* Content canvas */
+.ad-content {
+  background:
+    radial-gradient(600px 280px at 100% 0%, rgba(254, 226, 226, 0.65), transparent 60%),
+    #faf7f7;
+}
+.ad-head h1 {
+  letter-spacing: -0.03em;
+}
+.ad-card {
+  border-radius: 18px !important;
+  border: 1px solid color-mix(in srgb, #dc2626 10%, #f0e4e4) !important;
+  box-shadow: 0 8px 24px -16px rgba(127, 29, 29, 0.18) !important;
+  background: #fff !important;
+}
+.ad-card h2 {
+  letter-spacing: -0.02em;
+}
+
+/* Stats */
+.ad-stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+@media (min-width: 800px) {
+  .ad-stats {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+.ad-stat {
+  border-radius: 18px !important;
+  border: 1px solid color-mix(in srgb, #dc2626 12%, #f1e4e4) !important;
+  background: linear-gradient(180deg, #fff, #fff8f8) !important;
+  padding: 16px !important;
+  box-shadow: 0 6px 18px -12px rgba(127, 29, 29, 0.2);
+}
+.ad-stat-ico {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  display: grid;
+  place-items: center;
+  background: #fef2f2 !important;
+  color: #dc2626 !important;
+}
+.ad-stat-ico.red,
+.ad-stat-ico.blue {
+  background: linear-gradient(135deg, #fecaca, #fef2f2) !important;
+  color: #b91c1c !important;
+}
+
+/* Buttons */
+.ad-btn,
+button.ad-btn {
+  border-radius: 12px !important;
+  font-weight: 800 !important;
+  transition: transform 0.15s, box-shadow 0.15s, opacity 0.15s;
+}
+.ad-btn:active {
+  transform: scale(0.98);
+}
+.ad-btn.primary,
+.ad-btn.brand {
+  background: linear-gradient(100deg, #f87171, #dc2626) !important;
+  color: #fff !important;
+  border: 0 !important;
+  box-shadow: 0 8px 18px -10px rgba(185, 28, 28, 0.55) !important;
+}
+.ad-btn.danger {
+  background: #fef2f2 !important;
+  color: #b91c1c !important;
+  border: 1px solid #fecaca !important;
+}
+.ad-btn.ghost,
+.ad-btn.sm {
+  border-radius: 10px !important;
+}
+
+/* Tables */
+.ad-table,
+table.ad-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 13px;
+}
+.ad-table th {
+  text-align: left;
+  color: #9a6b6b;
+  font-weight: 700;
+  padding: 10px 12px;
+  border-bottom: 1px solid #fecaca;
+  background: #fffafa;
+}
+.ad-table td {
+  padding: 12px;
+  border-bottom: 1px solid #f3e8e8;
+  vertical-align: middle;
+}
+.ad-table tr:hover td {
+  background: #fff5f5;
+}
+
+/* Status pills */
+.ad-pill,
+.status,
+.s-pending_payment,
+.s-paid,
+.s-processing,
+.s-completed,
+.s-rejected {
+  border-radius: 999px !important;
+  font-weight: 800 !important;
+  font-size: 11px !important;
+  padding: 3px 10px !important;
+}
+.s-pending_payment { background: #fff7ed !important; color: #c2410c !important; }
+.s-paid, .s-processing { background: #fef2f2 !important; color: #b91c1c !important; }
+.s-completed { background: #ecfdf5 !important; color: #047857 !important; }
+.s-rejected, .s-refunded { background: #fef2f2 !important; color: #9f1239 !important; }
+
+/* Forms */
+.ad input[type="text"],
+.ad input[type="password"],
+.ad input[type="number"],
+.ad input[type="url"],
+.ad textarea,
+.ad select {
+  border-radius: 12px !important;
+  border: 1px solid #fecaca !important;
+  background: #fffafa !important;
+}
+.ad input:focus,
+.ad textarea:focus,
+.ad select:focus {
+  border-color: #f87171 !important;
+  box-shadow: 0 0 0 3px rgba(248, 113, 113, 0.2) !important;
+  outline: none !important;
+}
+
+/* Empty / soft panels */
+.ad-empty {
+  text-align: center;
+  padding: 36px 16px;
+  color: #9a6b6b;
+  border: 1px dashed #fecaca;
+  border-radius: 16px;
+  background: #fffafa;
+}

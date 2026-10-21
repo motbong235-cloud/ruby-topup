@@ -76,7 +76,7 @@ export default function AdminLayout({ adminPath = "pp-console" }) {
     return (
       <div className="ad-login">
         <form className="ad-login-box" onSubmit={login}>
-          <div className="ad-logo">PP</div>
+          <div className="ad-logo">RT</div>
           <h1>
             Ruby <span>Admin</span>
           </h1>
@@ -106,7 +106,7 @@ export default function AdminLayout({ adminPath = "pp-console" }) {
     <div className="ad">
       <aside className="ad-side">
         <Link to={base} className="ad-brand">
-          <span className="ad-logo sm">PP</span>
+          <span className="ad-logo sm">RT</span>
           <span>
             Ruby <b>Admin</b>
           </span>
@@ -141,7 +141,7 @@ export default function AdminLayout({ adminPath = "pp-console" }) {
       <div className="ad-main">
         <header className="ad-mbar">
           <Link to={base} className="ad-brand">
-            <span className="ad-logo sm">PP</span>
+            <span className="ad-logo sm">RT</span>
             <span>
               Ruby <b>Admin</b>
             </span>
