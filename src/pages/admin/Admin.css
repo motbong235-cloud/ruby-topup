@@ -2402,3 +2402,83 @@ table.ad-table {
     transition: none !important;
   }
 }
+
+/* ========== Dashboard-specific animations ========== */
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes dash-rise {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes dash-bar-grow {
+    from { transform: scaleY(0); opacity: 0.4; }
+    to   { transform: scaleY(1); opacity: 1; }
+  }
+  @keyframes dash-row-in {
+    from { opacity: 0; transform: translateX(-8px); }
+    to   { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes dash-count {
+    from { opacity: 0; transform: scale(0.9); }
+    to   { opacity: 1; transform: scale(1); }
+  }
+
+  .dash-anim {
+    animation: dash-rise 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  .dash-anim-d1 { animation-delay: 0.28s; }
+  .dash-anim-d2 { animation-delay: 0.4s; }
+
+  .ad-stat.dash-anim .ad-stat-value {
+    animation: dash-count 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation-delay: inherit;
+  }
+
+  .ad-bar.dash-bar {
+    transform-origin: bottom center;
+    animation: dash-bar-grow 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  .ad-bar.dash-bar > span,
+  .ad-bar.dash-bar .ad-bar-fill {
+    transform-origin: bottom center;
+  }
+
+  /* If bar uses inline height on child */
+  .ad-chart .ad-bar {
+    transition: height 0.4s ease;
+  }
+
+  .dash-row {
+    animation: dash-row-in 0.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .dash .ad-card.dash-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 32px -16px rgba(127, 29, 29, 0.3) !important;
+  }
+
+  .dash .ad-integ li {
+    transition: background 0.2s ease, transform 0.15s ease;
+  }
+  .dash .ad-integ li:hover {
+    background: #fff5f5;
+    transform: translateX(2px);
+  }
+
+  .dash .ad-dot.ok {
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.5);
+    animation: dash-dot-pulse 2s ease-in-out infinite;
+  }
+  @keyframes dash-dot-pulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.45); }
+    50% { box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dash-anim,
+  .dash-bar,
+  .dash-row,
+  .dash .ad-dot.ok {
+    animation: none !important;
+  }
+}

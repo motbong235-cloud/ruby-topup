@@ -6,9 +6,9 @@ const ADMIN_PATH = (typeof window !== "undefined" && window.__ADMIN_PATH__) || "
 
 const DAY_KM = ["អា", "ច", "អ", "ព", "ព្រ", "សុ", "ស"];
 
-function Stat({ icon, label, value, sub, tone = "red" }) {
+function Stat({ icon, label, value, sub, tone = "red", i = 0 }) {
   return (
-    <div className="ad-stat">
+    <div className="ad-stat dash-anim" style={{ animationDelay: `${0.05 + i * 0.07}s` }}>
       <span className={`ad-stat-ico ${tone}`}>
         <AIcon name={icon} size={20} />
       </span>
@@ -49,18 +49,18 @@ export default function Dashboard() {
   const maxRev = Math.max(1, ...s.daily.map((d) => d.revenue));
 
   return (
-    <div>
+    <div className="dash">
       <PageHead km="ផ្ទាំងគ្រប់គ្រង" en="Overview of orders, revenue and system status" />
 
       <div className="ad-stats">
-        <Stat icon="money" tone="red" label="ចំណូលសរុប" value={usd(s.revenue)} sub="ការបញ្ជាទិញជោគជ័យ" />
-        <Stat icon="trend" tone="green" label="ប្រាក់ចំណេញ" value={usd(s.profit)} sub="ចំណូល − តម្លៃដើម" />
-        <Stat icon="box" tone="violet" label="ការបញ្ជាទិញ" value={s.totalOrders} sub={`ថ្ងៃនេះ ${s.todayOrders}`} />
-        <Stat icon="clock" tone="amber" label="រង់ចាំបង់ប្រាក់" value={s.pending} sub="មិនទាន់បង់" />
+        <Stat i={0} icon="money" tone="red" label="ចំណូលសរុប" value={usd(s.revenue)} sub="ការបញ្ជាទិញជោគជ័យ" />
+        <Stat i={1} icon="trend" tone="green" label="ប្រាក់ចំណេញ" value={usd(s.profit)} sub="ចំណូល − តម្លៃដើម" />
+        <Stat i={2} icon="box" tone="violet" label="ការបញ្ជាទិញ" value={s.totalOrders} sub={`ថ្ងៃនេះ ${s.todayOrders}`} />
+        <Stat i={3} icon="clock" tone="amber" label="រង់ចាំបង់ប្រាក់" value={s.pending} sub="មិនទាន់បង់" />
       </div>
 
-      <div className="ad-grid2">
-        <section className="ad-card">
+      <div className="ad-grid2 dash-anim dash-anim-d1">
+        <section className="ad-card dash-card">
           <h2>ចំណូល ៧ ថ្ងៃចុងក្រោយ</h2>
           <div className="ad-chart">
             {s.daily.map((d) => {
@@ -117,7 +117,7 @@ export default function Dashboard() {
         </section>
       </div>
 
-      <section className="ad-card">
+      <section className="ad-card dash-card dash-anim dash-anim-d2">
         <div className="ad-card-head">
           <h2>ការបញ្ជាទិញថ្មីៗ</h2>
           <Link to={`/${ADMIN_PATH}/orders`} className="ad-link-sm">មើលទាំងអស់ →</Link>
@@ -126,8 +126,8 @@ export default function Dashboard() {
           <p className="ad-empty">មិនទាន់មានការបញ្ជាទិញនៅឡើយទេ</p>
         ) : (
           <ul className="ad-recent">
-            {recent.map((o) => (
-              <li key={o.id}>
+            {recent.map((o, ri) => (
+              <li key={o.id} className="dash-row" style={{ animationDelay: `${0.45 + ri * 0.05}s` }}>
                 <div>
                   <strong>{o.gameName}</strong>
                   <small>
