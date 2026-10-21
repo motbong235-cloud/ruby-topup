@@ -5221,3 +5221,137 @@ main {
   font-weight: 800 !important;
   color: var(--primary) !important;
 }
+
+/* ========== Motion / Animations ========== */
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes ruby-fade-up {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes ruby-fade-in {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  @keyframes ruby-scale-in {
+    from { opacity: 0; transform: scale(0.94); }
+    to   { opacity: 1; transform: scale(1); }
+  }
+  @keyframes ruby-shimmer {
+    0%   { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+  @keyframes ruby-pulse-soft {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.35); }
+    50%      { box-shadow: 0 0 0 10px rgba(220, 38, 38, 0); }
+  }
+  @keyframes ruby-float {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-4px); }
+  }
+
+  /* Page shell */
+  .container > .banner,
+  .container > .section {
+    animation: ruby-fade-up 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  .container > .section:nth-of-type(2) { animation-delay: 0.06s; }
+  .container > .section:nth-of-type(3) { animation-delay: 0.12s; }
+  .container > .section:nth-of-type(4) { animation-delay: 0.18s; }
+
+  /* Product cards stagger */
+  .game-grid .gc-card,
+  .game-grid .game-card {
+    animation: ruby-fade-up 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  .game-grid .gc-card:nth-child(1),
+  .game-grid .game-card:nth-child(1) { animation-delay: 0.04s; }
+  .game-grid .gc-card:nth-child(2),
+  .game-grid .game-card:nth-child(2) { animation-delay: 0.08s; }
+  .game-grid .gc-card:nth-child(3),
+  .game-grid .game-card:nth-child(3) { animation-delay: 0.12s; }
+  .game-grid .gc-card:nth-child(4),
+  .game-grid .game-card:nth-child(4) { animation-delay: 0.16s; }
+  .game-grid .gc-card:nth-child(5),
+  .game-grid .game-card:nth-child(5) { animation-delay: 0.2s; }
+  .game-grid .gc-card:nth-child(6),
+  .game-grid .game-card:nth-child(6) { animation-delay: 0.24s; }
+  .game-grid .gc-card:nth-child(n+7),
+  .game-grid .game-card:nth-child(n+7) { animation-delay: 0.28s; }
+
+  .gc-card,
+  .game-card,
+  .event-card,
+  .hot-card {
+    transition:
+      transform 0.32s cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 0.32s ease,
+      border-color 0.28s ease;
+  }
+
+  .gc-cta,
+  .game-cta,
+  .btn {
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease,
+      background 0.2s ease,
+      color 0.2s ease,
+      opacity 0.2s ease;
+  }
+  .btn:hover,
+  .gc-cta.on:hover {
+    transform: translateY(-1px);
+  }
+  .btn:active,
+  .gc-cta:active {
+    transform: scale(0.97);
+  }
+
+  /* Banner */
+  .banner-slide {
+    animation: ruby-fade-in 0.6s ease both;
+  }
+  .banner-badge {
+    animation: ruby-float 3.2s ease-in-out infinite;
+  }
+
+  /* Install banner pulse on CTA */
+  .install-banner .install-banner-cta {
+    animation: ruby-pulse-soft 2.4s ease-in-out infinite;
+  }
+
+  /* Float chat */
+  .float-chat {
+    transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.25s ease;
+  }
+  .float-chat:hover {
+    transform: scale(1.08);
+  }
+  .float-chat:active {
+    transform: scale(0.95);
+  }
+
+  /* Header */
+  .header {
+    transition: background 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  /* Skeleton shimmer (loading) */
+  .skel,
+  .skeleton {
+    background: linear-gradient(90deg, #f3e8e8 25%, #fde8e8 50%, #f3e8e8 75%);
+    background-size: 200% 100%;
+    animation: ruby-shimmer 1.2s linear infinite;
+    border-radius: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

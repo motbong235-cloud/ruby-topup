@@ -2324,3 +2324,81 @@ table.ad-table {
   border-radius: 16px;
   background: #fffafa;
 }
+
+/* ========== Admin motion ========== */
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes ad-fade-up {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes ad-fade-in {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  @keyframes ad-pop {
+    from { opacity: 0; transform: scale(0.96); }
+    to   { opacity: 1; transform: scale(1); }
+  }
+
+  .ad-login-box {
+    animation: ad-pop 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  .ad-content {
+    animation: ad-fade-in 0.35s ease both;
+  }
+  .ad-head {
+    animation: ad-fade-up 0.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  .ad-stat {
+    animation: ad-fade-up 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  .ad-stats .ad-stat:nth-child(1) { animation-delay: 0.04s; }
+  .ad-stats .ad-stat:nth-child(2) { animation-delay: 0.08s; }
+  .ad-stats .ad-stat:nth-child(3) { animation-delay: 0.12s; }
+  .ad-stats .ad-stat:nth-child(4) { animation-delay: 0.16s; }
+
+  .ad-card {
+    animation: ad-fade-up 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  }
+  .ad-card:nth-of-type(2) { animation-delay: 0.06s; }
+  .ad-card:nth-of-type(3) { animation-delay: 0.1s; }
+  .ad-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 28px -16px rgba(127, 29, 29, 0.28) !important;
+  }
+
+  .ad-link {
+    transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease !important;
+  }
+  .ad-link:active {
+    transform: scale(0.98);
+  }
+
+  .ad-btn,
+  button.ad-btn {
+    transition: transform 0.15s ease, box-shadow 0.2s ease, opacity 0.2s ease !important;
+  }
+  .ad-btn:hover {
+    transform: translateY(-1px);
+  }
+
+  .ad-table tr {
+    transition: background 0.15s ease;
+  }
+
+  .ad-side {
+    animation: ad-fade-in 0.4s ease both;
+  }
+  .ad-mbar {
+    animation: ad-fade-in 0.3s ease both;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ad *,
+  .ad-login * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
